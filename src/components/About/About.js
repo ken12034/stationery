@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'D:/github/res/css/read.sass'
+import styles from 'F:/github/stationery/res/css/read.sass'
 
 const Listitem = [
   {
@@ -21,11 +21,11 @@ const Listitem = [
     name: '橡皮擦'
   }
 ]
-class List extends React.Component{
+class ListContent extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      items : []
+
     };
   }
 
@@ -34,8 +34,8 @@ class List extends React.Component{
       <div className="read_left">
         <ul>
           {
-            this.props.items.map( item => (
-            <li className="read_left_item"> { item.name } </li>
+            this.props.items.map( (item, i) => (
+            <li key={i} className="read_left_item"> { item.name } </li>
             ))
           }
         </ul>
@@ -55,7 +55,12 @@ class Griditem extends React.Component{
   render() {
     return (  //jsx的class 要用className
       <div className="read_right">
-         <div className="grid_group"></div>
+         <div className="grid_group">
+            <div className="grid_group_item">
+                //<img src = { require('./img/09.jpg') }  />
+
+            </div>
+         </div>
       </div>
     );
   }
@@ -64,7 +69,7 @@ class Griditem extends React.Component{
 
 const About = () => (
   <div>
-     <List items={ Listitem } />
+     <ListContent items={ Listitem } />
      <Griditem />
   </div>
 );

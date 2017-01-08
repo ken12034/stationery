@@ -1,5 +1,22 @@
 import React from 'react';
 
+class VedioShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { };
+
+  }
+  render() {
+    return (
+    <div className="top_content">
+      <video width="100%"   autoPlay="true"  loop="true">
+      <source src="http://video.wixstatic.com/video/11062b_40811fcc9cac4a5bbfb0d93aaa94d70d/1080p/mp4/file.mp4"
+      type="video/mp4" />
+       </video>
+    </div>
+    );
+  }
+}
 
 class SliderShow extends React.Component {
   constructor(props) {
@@ -7,15 +24,8 @@ class SliderShow extends React.Component {
     this.state = {
       imgUrl:[
         {
-          url:  require('./img/06.jpg')
+          url:  require('./img/4cb259_b1adeba8d4eb4690a635aff82ca8190e.jpg')
         },
-        {
-          url:  require('./img/07.jpg')
-        },
-        {
-          url:  require('./img/08.jpg')
-        },
-
       ],
       num : 0
     };
@@ -56,11 +66,43 @@ class SliderShow extends React.Component {
   render() {
     return (  //jsx的class 要用className
       <div className="slidershow_panel">
-          <div className="slidershow_img">
-             <img src={ this.state.imgUrl[  this.state.num ].url } />
-          </div>
-          <div className="leftButton" onClick={this.left}></div>
-          <div className="rightButton" onClick={this.right.bind(this)}></div>
+        <div className="slidershow_img">
+           <img src={ this.state.imgUrl[  this.state.num ].url } />
+        </div>
+        <div className="leftButton" onClick={this.left}></div>
+        <div className="rightButton" onClick={this.right.bind(this)}></div>
+      </div>
+    );
+  }
+}
+
+
+class HotContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {  };
+
+  }
+  render() {
+    return (
+      <div>
+        <div className="main_panel">
+            <div className="home_content"></div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class ImageBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {  };
+
+  }
+  render() {
+    return (
+      <div>
       </div>
     );
   }
@@ -68,7 +110,8 @@ class SliderShow extends React.Component {
 
 const Home = () => (
   <div>
-     <SliderShow />
+     <VedioShow />
+     <HotContent />
   </div>
 );
 
