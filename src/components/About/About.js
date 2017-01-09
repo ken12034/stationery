@@ -57,8 +57,22 @@ class Griditem extends React.Component{
       <div className="read_right">
          <div className="grid_group">
             <div className="grid_group_item">
-                //<img src = { require('./img/09.jpg') }  />
-
+                <img className="grid_group_item_img" src = { require('./img/07.jpg') }  />
+                <div className="grid_group_item_name">
+                  <p>鋼筆</p><p>300</p>
+                </div>
+            </div>
+            <div className="grid_group_item">
+                <img className="grid_group_item_img" src = { require('./img/09.jpg') }  />
+                <div className="grid_group_item_name">
+                  <p>鋼筆</p><p>300</p>
+                </div>
+            </div>
+            <div className="grid_group_item">
+                <img className="grid_group_item_img" src = { require('./img/v5.jpg') }  />
+                <div className="grid_group_item_name">
+                  <p>鋼筆</p><p>300</p>
+                </div>
             </div>
          </div>
       </div>
@@ -68,7 +82,7 @@ class Griditem extends React.Component{
 
 
 const About = () => (
-  <div>
+  <div className="center_content">
      <ListContent items={ Listitem } />
      <Griditem />
   </div>
