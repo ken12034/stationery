@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'F:/github/stationery/res/css/read.sass'
+
 
 const Listitem = [
   {

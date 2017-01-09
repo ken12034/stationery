@@ -8,6 +8,7 @@ import About from './components/About';
 import User from './components/User';
 import Contacts from './components/Contacts';
 require('../res/css/test.sass');
+require('../res/css/read.sass');
 
 ReactDOM.render(
   <Router history={hashHistory}>

@@ -1,4 +1,6 @@
 import React from 'react';
+import SliderShow from '../SliderShow';
+
 
 class VedioShow extends React.Component {
   constructor(props) {
@@ -18,63 +20,7 @@ class VedioShow extends React.Component {
   }
 }
 
-class SliderShow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imgUrl:[
-        {
-          url:  require('./img/4cb259_b1adeba8d4eb4690a635aff82ca8190e.jpg')
-        },
-      ],
-      num : 0
-    };
 
-    this.right = this.right.bind(this);
-    this.left = this.left.bind(this);
-  }
-
-  right() {
-    this.setState(  { num:
-      this.state.num<(this.state.imgUrl.length-1) ?
-      this.state.num + 1 : this.state.num = 0
-    });
-  }
-
-  left() {
-    this.setState(  { num:
-      this.state.num >0 ?
-      this.state.num - 1 : this.state.num = this.state.imgUrl.length-1
-    });
-  }
-
-  componentDidMount() {
-
-    this.timerID = setInterval(
-      () => this.tick(),
-      5000
-    );
-
-  }
-  tick() {
-    this.setState(  { num:
-      this.state.num<(this.state.imgUrl.length-1) ?
-      this.state.num + 1 : this.state.num=0
-    });
-  }
-
-  render() {
-    return (  //jsx的class 要用className
-      <div className="slidershow_panel">
-        <div className="slidershow_img">
-           <img src={ this.state.imgUrl[  this.state.num ].url } />
-        </div>
-        <div className="leftButton" onClick={this.left}></div>
-        <div className="rightButton" onClick={this.right.bind(this)}></div>
-      </div>
-    );
-  }
-}
 
 
 class HotContent extends React.Component {
@@ -87,7 +33,10 @@ class HotContent extends React.Component {
     return (
       <div>
         <div className="main_panel">
-            <div className="home_content"></div>
+            <div className="home_content">
+            <ImageBox />
+
+            </div>
         </div>
       </div>
     );
@@ -102,7 +51,31 @@ class ImageBox extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="box_group">
+        <div className="box_content">
+          <img src={  require('./img/v7.jpg') } />
+          <div className="box_content_hover">
+              <div className="box_content_btn">衣服</div>
+          </div>
+        </div>
+        <div className="box_content">
+          <img src={  require('./img/v5.jpg') } />
+          <div className="box_content_hover">
+              <div className="box_content_btn">文具</div>
+          </div>
+        </div>
+        <div className="box_content">
+          <img src={  require('./img/v6.jpg') } />
+          <div className="box_content_hover">
+              <div className="box_content_btn">家具</div>
+          </div>
+        </div>
+        <div className="box_content">
+          <img src={  require('./img/v4.jpg') } />
+          <div className="box_content_hover">
+              <div className="box_content_btn">收納</div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -112,6 +85,7 @@ const Home = () => (
   <div>
      <VedioShow />
      <HotContent />
+
   </div>
 );
 
